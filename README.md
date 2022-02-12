@@ -25,7 +25,7 @@ How to use it:
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
-Caprtured information for earch record and their key name:
+avaiable information for earch record in the DMARC report and the LEEF key name:
 XML Tag | LEEF Key
 --- | ---
 dmarc_report_version | ver=
