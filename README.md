@@ -1,7 +1,7 @@
 # DMARC2Syslog
 Python script to read DMARC reports from a mailbox and covert it to syslog messages for the purpose of collecting the reports in a SIEM solution.
 
-
+-------------------------------------------------------------------------------------------------------------------------------------------------
 Supported mailbox access:
   1. EWS (Exchange Web Serivce)
 
