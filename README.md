@@ -1,5 +1,7 @@
 # DMARC2Syslog
-Python script to read DMARC reports from a mailbox and covert it to syslog messages for the purpose of collecting the reports in a SIEM solution.
+Python script to read DMARC reports from a mailbox, parse them, format them as syslog messages, and send them to syslog server. 
+
+Useful to send DMARC report to SIEM to build use cases.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 Supported mailbox access:
