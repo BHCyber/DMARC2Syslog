@@ -14,4 +14,9 @@ Requirements:
 How to use it:
   1. Provide the requried configuration in the confgiruation file "config.ini" 
   2. create a task scheduler or cron job to run the script file "start.py", as an example each 10 mintues.
-  3. The script manages the last time it checked for rep
+  3. The script manages the last time it checked for reports and it will check starting from last time check.
+
+Caprtured information for earch record and their key name:
+XML Tag | LEEF Key
+--- | ---
+ss | ss
