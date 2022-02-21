@@ -5,11 +5,11 @@ Useful to send DMARC report to SIEM to build use cases.
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 Supported mailbox access:
-  1. EWS (Exchange Web Serivce)
+  1. EWS (Exchange Web Service)
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
-Supported Syslog messages foramts:
+Supported Syslog messages formats:
   1. LEEF v1
 
 
@@ -21,13 +21,13 @@ Requirements:
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
 How to use it:
-  1. Provide the requried configuration in the confgiruation file "config.ini" 
-  2. create a task scheduler or cron job to run the script file "start.py", as an example each 10 mintues.
+  1. Provide the required configuration in the configuration file "config.ini" 
+  2. create a task scheduler or cron job to run the script file "start.py", as an example each 10 minutes.
   3. The script manages the last time it checked for reports and it will check starting from last time check.
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
-avaiable information for earch record in the DMARC report and the LEEF key name:
+available information for each record in the DMARC report and the LEEF key name:
 XML Tag | LEEF Key
 --- | ---
 dmarc_report_version | ver=
