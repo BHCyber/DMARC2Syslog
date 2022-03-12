@@ -33,11 +33,16 @@ def init_main():
 def init_ews():
     try:
         exchangeWebSrv = ExchangeWebSrv(DMARCServiceConfig.ews_username,DMARCServiceConfig.ews_password,DMARCServiceConfig.ews_email,DMARCServiceConfig.ews_service_endpoint)
+
+        if(DMARCServiceConfig.ews_disable_https_cert_verify):
+            exchangeWebSrv.disable_https_cert_verify()
+        
         exchangeWebSrv.connect()
         attachments_gz = exchangeWebSrv.get_dmarc_report_gz(DMARCServiceConfig.start_datetime) 
         return attachments_gz
     except Exception as exception: 
         ExceptlogClient.log_except(exception)
+        input()
         
 
 def init_thread(srv_max_worker,attachments_gz):

@@ -1,4 +1,5 @@
 from exchangelib import DELEGATE, Account, Credentials,Configuration,NTLM,EWSDateTime
+from exchangelib.protocol import BaseProtocol, NoVerifyHTTPAdapter
 
 class ExchangeWebSrv:        
     def __init__(self, username,password,email,service_endpoint): 
@@ -13,6 +14,8 @@ class ExchangeWebSrv:
         self.credentials = Credentials(username = self.username, password = self.password)
         self.configuration = Configuration(service_endpoint = self.service_endpoint, credentials=self.credentials, auth_type=self.auth_type)
         
+    def disable_https_cert_verify(self):
+        BaseProtocol.HTTP_ADAPTER_CLS = NoVerifyHTTPAdapter
 
     def connect(self):
         self.account = Account(primary_smtp_address= self.email, config=self.configuration, autodiscover=self.auto_discover, access_type=self.access_type)

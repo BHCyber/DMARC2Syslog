@@ -1,4 +1,5 @@
 import configparser
+from operator import truediv
 import os
 import sys
 from logger import ExceptlogClient
@@ -13,6 +14,7 @@ class DMARCServiceConfig:
     ews_password = ""
     ews_email = ""
     ews_service_endpoint = ""
+    ews_disable_https_cert_verify = False 
     syslog_server = ""
     syslog_port = ""
     syslog_application = ""
@@ -41,8 +43,13 @@ class DMARCServiceConfig:
                 DMARCServiceConfig.ews_email = DMARCServiceConfig.config['EWS']['ews_email']
                 DMARCServiceConfig.ews_service_endpoint = DMARCServiceConfig.config['EWS']['ews_service_endpoint']
                 
+                if (DMARCServiceConfig.config.has_option('EWS','ews_disable_https_cert_verify')):
+                    DMARCServiceConfig.ews_disable_https_cert_verify = eval(DMARCServiceConfig.config['EWS']['ews_disable_https_cert_verify'])
+                    
+            
             DMARCServiceConfig.error_log_enable = eval(DMARCServiceConfig.config['CONFIG']['error_log_enable'])
             DMARCServiceConfig.debug_log_enable = eval(DMARCServiceConfig.config['CONFIG']['debug_log_enable'])
+        
         except Exception as exception:
             ExceptlogClient.initiate(DMARCServiceConfig.error_log_path,DMARCServiceConfig.error_log_enable,True)
             ExceptlogClient.log_except(exception)
