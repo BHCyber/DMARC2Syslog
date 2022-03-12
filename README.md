@@ -73,3 +73,4 @@ EWS | ews_username | domain\userName | username to connect to mailbox through EW
 EWS | ews_password | userPass | password to connect to mailbox through EWS
 EWS | ews_email | email@domain.com | mailbox email
 EWS | ews_service_endpoint | https://mail.domian.com/ews/exchange.asmx | ews service endpoint URL
+EWS | ews_disable_https_cert_verify | [True,False] | disable certification verification
