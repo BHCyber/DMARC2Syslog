@@ -23,7 +23,7 @@ Requirements:
 How to use it:
   1. Provide the required configuration in the configuration file "config.ini" 
   2. create a task scheduler or cron job to run the script file "start.py", as an example each 10 minutes.
-  3. The script manages the last time it checked for reports and it will check starting from last time check.
+  3. The script manages the last time it checked for reports and it starts from last time check.
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------
