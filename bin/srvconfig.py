@@ -29,7 +29,7 @@ class DMARCServiceConfig:
     @staticmethod
     def init_config():
         try:
-            DMARCServiceConfig.config = configparser.ConfigParser()
+            DMARCServiceConfig.config = configparser.RawConfigParser()
             DMARCServiceConfig.config.read(DMARCServiceConfig._config_file_path)
             DMARCServiceConfig.start_datetime = DMARCServiceConfig.config['CONFIG']['start_datetime']
             DMARCServiceConfig.srv_max_worker = int(DMARCServiceConfig.config['CONFIG']['srv_max_worker'])
