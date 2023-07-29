@@ -8,7 +8,7 @@ from datetime import datetime
 
 class DMARCServiceConfig:
     config = None
-    _config_file_path = os.path.join(sys.path[0], "config\config.ini") 
+    _config_file_path = os.path.join(sys.path[0], "config", "config.ini") 
     start_datetime = ""
     ews_username = ""
     ews_password = ""
@@ -21,7 +21,7 @@ class DMARCServiceConfig:
     srv_max_worker = ""
     mailbox_type = ""
     _mailbox_type_ews = "ews"
-    error_log_path = os.path.join(sys.path[0], "log\error.log") 
+    error_log_path = os.path.join(sys.path[0], "log", "error.log") 
     error_log_enable = True
     debug_log_enable = False
     
@@ -29,7 +29,7 @@ class DMARCServiceConfig:
     @staticmethod
     def init_config():
         try:
-            DMARCServiceConfig.config = configparser.ConfigParser()
+            DMARCServiceConfig.config = configparser.RawConfigParser()
             DMARCServiceConfig.config.read(DMARCServiceConfig._config_file_path)
             DMARCServiceConfig.start_datetime = DMARCServiceConfig.config['CONFIG']['start_datetime']
             DMARCServiceConfig.srv_max_worker = int(DMARCServiceConfig.config['CONFIG']['srv_max_worker'])
